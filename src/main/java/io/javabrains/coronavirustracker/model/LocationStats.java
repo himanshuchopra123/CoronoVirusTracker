@@ -6,6 +6,7 @@ public class LocationStats {
     private String country;
     private  int latestTotal;
     private  int diffFromPreviousDay;
+    private int diffFromPreviousDay2;
 
     public int getDiffFromPreviousDay() {
         return diffFromPreviousDay;
@@ -48,6 +49,12 @@ public class LocationStats {
         this.latestTotal = latestTotal;
     }
 
+    public int getDiffFromPreviousDay2() {
+        return diffFromPreviousDay2;
+    }
 
+    public void setDiffFromPreviousDay2(int diffFromPreviousDay2) {
+        this.diffFromPreviousDay2 = diffFromPreviousDay2;
+    }
 
-}
+}   
