@@ -24,9 +24,14 @@ import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 @Service
 public class CoronaVirusDataService {
+
+    @Autowired
+    private LocationStatsPersistenceService persistenceService;
 
     private static String VIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 
@@ -160,6 +165,8 @@ public class CoronaVirusDataService {
             isProcessing = false;
             lock.notifyAll();
         }
+
+        persistenceService.saveAllStats(newStats);
     }
 
     @PreDestroy

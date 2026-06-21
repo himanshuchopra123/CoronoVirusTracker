@@ -57,4 +57,4 @@ public class LocationStats {
         this.diffFromPreviousDay2 = diffFromPreviousDay2;
     }
 
-}
+}   
